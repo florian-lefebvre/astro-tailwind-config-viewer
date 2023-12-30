@@ -7,9 +7,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     astroTailwindConfigViewer({
-      viewer: {
-        devOverlay: true,
-      },
+      viewer: true,
     }),
   ],
 });

@@ -8,7 +8,7 @@ export type Options = {
   viewer:
     | {
         endpoint: string;
-        devOverlay: boolean;
+        overlayMode: "embed" | "redirect";
       }
     | boolean;
 };
@@ -16,7 +16,7 @@ export type Options = {
 const DEFAULT_OPTIONS = {
   viewer: {
     endpoint: "/_tailwind",
-    devOverlay: true,
+    overlayMode: "redirect",
   },
 } satisfies Options;
 
@@ -50,13 +50,16 @@ export const astroTailwindConfigViewer = ({
           viewerPrefix = joinURL(config.base, viewerOptions.endpoint);
           logger.info(`Tailwind config viewer is available at ${viewerPrefix}`);
 
-          if (viewerOptions.devOverlay) {
-            addDevToolbarApp("./integrations/plugin.ts");
-          }
+          addDevToolbarApp("./integrations/plugin.ts");
 
           updateConfig({
             vite: {
-              plugins: [virtualImportsPlugin({ viewerLink: viewerPrefix })],
+              plugins: [
+                virtualImportsPlugin({
+                  viewerLink: viewerPrefix,
+                  overlayMode: viewerOptions.overlayMode,
+                }),
+              ],
             },
           });
         }

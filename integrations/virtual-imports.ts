@@ -6,13 +6,16 @@ function resolveVirtualModuleId<T extends string>(id: T): `\0${T}` {
 
 export const virtualImportsPlugin = ({
   viewerLink,
+  overlayMode,
 }: {
   viewerLink: string;
+  overlayMode: string;
 }): Plugin => {
   const modules: Record<string, string> = {
-    "virtual:@astrojs/tailwind/dev-overlay": `export const viewerLink = ${JSON.stringify(
-      viewerLink
-    )};`,
+    "virtual:@astrojs/tailwind/dev-overlay": `
+    export const viewerLink = ${JSON.stringify(viewerLink)};
+    export const overlayMode = ${JSON.stringify(overlayMode)};
+    `,
   };
 
   /** Mapping names prefixed with `\0` to their original form. */
