@@ -5,13 +5,24 @@ import { setupViewer } from "./viewer";
 import { virtualImportsPlugin } from "./virtual-imports";
 
 export type Options = {
-  endpoint: string;
+  viewer:
+    | {
+        endpoint: string;
+      }
+    | boolean;
 };
 
 export const astroTailwindConfigViewer = ({
-  endpoint = "/_tailwind",
+  viewer = false,
 }: Partial<Options> = {}): AstroIntegration => {
-  const options = { endpoint };
+  const options = { viewer };
+  const viewerOptions: Exclude<Options["viewer"], true> = options.viewer
+    ? options.viewer === true
+      ? {
+          endpoint: "/_tailwind",
+        }
+      : options.viewer
+    : false;
 
   let config: AstroConfig;
   let viewerPrefix: string;
@@ -26,20 +37,23 @@ export const astroTailwindConfigViewer = ({
         updateConfig,
       }) => {
         addWatchFile(fileURLToPath(import.meta.url));
-        addDevToolbarApp("./integrations/plugin.ts");
-
         config = _config;
 
-        viewerPrefix = joinURL(config.base, options.endpoint);
+        if (viewerOptions) {
+          addDevToolbarApp("./integrations/plugin.ts");
+          viewerPrefix = joinURL(config.base, viewerOptions.endpoint);
 
-        updateConfig({
-          vite: {
-            plugins: [virtualImportsPlugin({ viewerLink: viewerPrefix })],
-          },
-        });
+          updateConfig({
+            vite: {
+              plugins: [virtualImportsPlugin({ viewerLink: viewerPrefix })],
+            },
+          });
+        }
       },
       "astro:server:setup": async ({ server }) => {
-        await setupViewer({ server, root: config.root, viewerPrefix });
+        if (viewerOptions) {
+          await setupViewer({ server, root: config.root, viewerPrefix });
+        }
       },
     },
   };
