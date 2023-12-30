@@ -8,9 +8,17 @@ export type Options = {
   viewer:
     | {
         endpoint: string;
+        devOverlay: boolean;
       }
     | boolean;
 };
+
+const DEFAULT_OPTIONS = {
+  viewer: {
+    endpoint: "/_tailwind",
+    devOverlay: true,
+  },
+} satisfies Options;
 
 export const astroTailwindConfigViewer = ({
   viewer = false,
@@ -18,10 +26,8 @@ export const astroTailwindConfigViewer = ({
   const options = { viewer };
   const viewerOptions: Exclude<Options["viewer"], true> = options.viewer
     ? options.viewer === true
-      ? {
-          endpoint: "/_tailwind",
-        }
-      : options.viewer
+      ? DEFAULT_OPTIONS.viewer
+      : { ...DEFAULT_OPTIONS.viewer, ...options.viewer }
     : false;
 
   let config: AstroConfig;
@@ -35,13 +41,18 @@ export const astroTailwindConfigViewer = ({
         addWatchFile,
         addDevToolbarApp,
         updateConfig,
+        logger,
       }) => {
         addWatchFile(fileURLToPath(import.meta.url));
         config = _config;
 
         if (viewerOptions) {
-          addDevToolbarApp("./integrations/plugin.ts");
           viewerPrefix = joinURL(config.base, viewerOptions.endpoint);
+          logger.info(`Tailwind config viewer is available at ${viewerPrefix}`);
+
+          if (viewerOptions.devOverlay) {
+            addDevToolbarApp("./integrations/plugin.ts");
+          }
 
           updateConfig({
             vite: {

@@ -4,5 +4,12 @@ import { astroTailwindConfigViewer } from "./integrations/astro-tailwind-config-
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), astroTailwindConfigViewer({ viewer: true })],
+  integrations: [
+    tailwind(),
+    astroTailwindConfigViewer({
+      viewer: {
+        devOverlay: true,
+      },
+    }),
+  ],
 });

@@ -14,11 +14,20 @@ export default {
     link.href = viewerLink;
     link.target = "_blank";
     link.innerText = "Open as page";
+    Object.assign(link.style, {
+      display: "inline-block",
+      marginRight: "auto",
+      color: "rgba(224, 204, 250, 1)",
+      marginBottom: "16px",
+    } satisfies Partial<typeof link.style>);
     appWindow.appendChild(link);
 
     const viewerIframe = document.createElement("iframe");
     viewerIframe.src = viewerLink;
-    viewerIframe.style.height = "100%";
+    Object.assign(viewerIframe.style, {
+      height: "100%",
+      border: "1px solid rgba(27, 30, 36, 1)",
+    } satisfies Partial<typeof viewerIframe.style>);
     appWindow.appendChild(viewerIframe);
 
     canvas.appendChild(appWindow);
