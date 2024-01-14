@@ -1,8 +1,8 @@
 - [x] LICENSE
 - [x] READMEs
-- [ ] Documentation
+- [x] Documentation
   - [x] README
-  - [ ] Module options JSDoc
+  - [x] Module options JSDoc
 - [ ] Changeset
 - [ ] Check TODOS
 - [ ] Setup prettier
