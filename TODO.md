@@ -5,3 +5,8 @@
   - [ ] Module options JSDoc
 - [ ] Changeset
 - [ ] Check TODOS
+- [ ] Setup prettier
+- [ ] Setup eslint
+- [ ] GitHub metadata
+- [ ] GitHub templates
+- [ ] Share on Discord
