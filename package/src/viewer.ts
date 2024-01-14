@@ -1,5 +1,5 @@
 import type { AstroConfig } from "astro";
-import { join, resolve } from "node:path";
+import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import serveStatic from "serve-static";
 import loadConfig from "tailwindcss/loadConfig.js";
@@ -10,19 +10,21 @@ export const setupViewer = async ({
   server,
   root,
   viewerPrefix,
+  configFile,
+  viewerDistPath,
 }: {
   server: ViteDevServer;
   root: AstroConfig["root"];
   viewerPrefix: string;
+  configFile: string;
+  viewerDistPath: string;
 }) => {
   const resolveConfig = (await import(
     // @ts-ignore
     "tailwind-config-viewer/lib/tailwindConfigUtils.js"
   ).then((r) => r.resolveConfig)) as (config: any) => any;
 
-  const tailwindConfig = loadConfig(
-    join(fileURLToPath(root), "tailwind.config.mjs")
-  );
+  const tailwindConfig = loadConfig(join(fileURLToPath(root), configFile));
 
   server.middlewares.use(joinURL(viewerPrefix, "config.json"), (_, res) => {
     res.setHeader("Content-Type", "application/json");
@@ -30,6 +32,6 @@ export const setupViewer = async ({
   });
   server.middlewares.use(
     viewerPrefix,
-    serveStatic(resolve("./node_modules/tailwind-config-viewer/dist"))
+    serveStatic(viewerDistPath)
   );
 };

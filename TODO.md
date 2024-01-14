@@ -1,0 +1,7 @@
+- [ ] LICENSE
+- [ ] READMEs
+- [ ] Documentation
+  - [ ] README
+  - [ ] Module options JSDoc
+- [ ] Changeset
+- [ ] Check TODOS

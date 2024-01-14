@@ -1,10 +1,7 @@
 {
-  "name": "astro-tailwind-config-viewer",
-  "version": "0.0.0",
+  "name": "root",
   "scripts": {
     "playground:dev": "pnpm --filter playground dev"
   },
-  "keywords": [],
-  "author": "Florian Lefebvre",
-  "license": "MIT"
+  "author": "Florian Lefebvre"
 }
