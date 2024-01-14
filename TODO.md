@@ -1,7 +1,7 @@
-- [ ] LICENSE
-- [ ] READMEs
+- [x] LICENSE
+- [x] READMEs
 - [ ] Documentation
-  - [ ] README
+  - [x] README
   - [ ] Module options JSDoc
 - [ ] Changeset
 - [ ] Check TODOS

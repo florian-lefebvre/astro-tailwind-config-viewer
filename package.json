@@ -1,5 +1,9 @@
 {
   "name": "root",
+  "packageManager": "pnpm@8.14.1",
+  "engines": {
+    "node": ">=18.19.0"
+  },
   "scripts": {
     "playground:dev": "pnpm --filter playground dev"
   },

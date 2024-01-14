@@ -1,5 +1,5 @@
 export type Options = {
-  configFile?: string;
+  configFile: string;
   endpoint: string;
   overlayMode: "embed" | "redirect";
 };
