@@ -3,7 +3,10 @@
 - [x] Documentation
   - [x] README
   - [x] Module options JSDoc
-- [ ] Changeset
+- [ ] Setup changeset
+  - [ ] https://pnpm.io/fr/using-changesets#publishing
+  - [ ] https://github.com/changesets/action#with-publishing
+- [ ] Release
 - [ ] Check TODOS
 - [ ] Setup prettier
 - [ ] Setup eslint

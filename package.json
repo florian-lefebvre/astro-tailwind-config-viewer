@@ -1,11 +1,17 @@
 {
   "name": "root",
+  "private": true,
   "packageManager": "pnpm@8.14.1",
   "engines": {
     "node": ">=18.19.0"
   },
   "scripts": {
-    "playground:dev": "pnpm --filter playground dev"
+    "playground:dev": "pnpm --filter playground dev",
+    "changeset": "changeset",
+    "ci:publish": "pnpm publish -r"
   },
-  "author": "Florian Lefebvre"
+  "author": "Florian Lefebvre",
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1"
+  }
 }
