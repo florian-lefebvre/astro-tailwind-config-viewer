@@ -6,16 +6,31 @@ import { resolve } from "node:path";
  * @param {string} command
  * @param  {...Array<string>} args
  *
- * @returns {Promise<void>}
+ * @returns {Promise<string>}
  */
 const run = async (command, ...args) => {
   const cwd = resolve();
   return new Promise((resolve) => {
-    spawn(command, args, {
-      stdio: "inherit",
+    const cmd = spawn(command, args, {
+      stdio: ["inherit", "pipe", "pipe"], // Inherit stdin, pipe stdout, pipe stderr
       shell: true,
       cwd,
-    }).on("close", () => resolve());
+    });
+
+    let output = "";
+
+    cmd.stdout.on("data", (data) => {
+      process.stdout.write(data.toString());
+      output += data.toString();
+    });
+
+    cmd.stderr.on("data", (data) => {
+      process.stderr.write(data.toString());
+    });
+
+    cmd.on("close", () => {
+      resolve(output);
+    });
   });
 };
 
@@ -25,6 +40,17 @@ const main = async () => {
   await run('git commit -m "chore: update version"');
   await run("git push");
   await run("pnpm changeset publish");
+  await run("git push --follow-tags");
+  const tag = (await run("git describe --abbrev=0")).replace("\n", "");
+  await run("gh", [
+    "release",
+    "create",
+    tag,
+    "--title",
+    tag,
+    "--notes",
+    "Please refer to [CHANGELOG.md](https://github.com/florian-lefebvre/astro-tailwind-config-viewer/blob/main/package/CHANGELOG.md) for details.",
+  ]);
 };
 
 main();
