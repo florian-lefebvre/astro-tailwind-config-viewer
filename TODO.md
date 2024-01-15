@@ -9,8 +9,7 @@
 - [x] Release
 - [x] Check TODOS
   - [x] addWatchFile
-- [ ] Setup prettier
-- [ ] Setup eslint
+- [x] Setup biome
 - [ ] GitHub metadata
 - [ ] GitHub templates
 - [ ] Share on Discord

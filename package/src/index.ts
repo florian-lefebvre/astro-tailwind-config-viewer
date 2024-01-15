@@ -1,4 +1,4 @@
-import { astroTailwindConfigViewer } from "./integration"
-export * from "./types"
+import { astroTailwindConfigViewer } from "./integration";
+export * from "./types";
 
-export default astroTailwindConfigViewer
+export default astroTailwindConfigViewer;
