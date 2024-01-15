@@ -8,6 +8,7 @@
   - [ ] https://github.com/changesets/action#with-publishing
 - [ ] Release
 - [ ] Check TODOS
+  - [ ] addWatchFile
 - [ ] Setup prettier
 - [ ] Setup eslint
 - [ ] GitHub metadata
