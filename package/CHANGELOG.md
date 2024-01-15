@@ -1,5 +1,11 @@
 # astro-tailwind-config-viewer
 
+## 0.0.4
+
+### Patch Changes
+
+- 389b362: Test GH release
+
 ## 0.0.3
 
 ### Patch Changes
