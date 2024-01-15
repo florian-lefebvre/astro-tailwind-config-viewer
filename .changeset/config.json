@@ -1,15 +1,14 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
-  "changelog": "@changesets/cli/changelog",
+  "changelog": [
+    "@changesets/changelog-github",
+    { "repo": "florian-lefebvre/astro-tailwind-config-viewer" }
+  ],
   "commit": false,
   "fixed": [],
   "linked": [],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["playground"],
-  "privatePackages": {
-    "version": true,
-    "tag": true
-  }
+  "ignore": ["playground"]
 }
