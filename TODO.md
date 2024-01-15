@@ -3,10 +3,10 @@
 - [x] Documentation
   - [x] README
   - [x] Module options JSDoc
-- [ ] Setup changeset
-  - [ ] https://pnpm.io/fr/using-changesets#publishing
-  - [ ] https://github.com/changesets/action#with-publishing
-- [ ] Release
+- [x] Setup changeset
+  - [x] https://pnpm.io/fr/using-changesets#publishing
+  - [x] https://github.com/changesets/action#with-publishing
+- [x] Release
 - [ ] Check TODOS
   - [ ] addWatchFile
 - [ ] Setup prettier

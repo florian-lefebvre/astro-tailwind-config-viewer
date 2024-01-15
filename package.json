@@ -7,9 +7,9 @@
   },
   "scripts": {
     "playground:dev": "pnpm --filter playground dev",
-    "changeset": "changeset"
+    "changeset": "changeset",
+    "release": "node scripts/release.mjs"
   },
-  "author": "Florian Lefebvre",
   "devDependencies": {
     "@changesets/cli": "^2.27.1"
   }
