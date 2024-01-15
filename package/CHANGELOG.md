@@ -1,5 +1,11 @@
 # astro-tailwind-config-viewer
 
+## 0.0.2
+
+### Patch Changes
+
+- 9fa9fbf: Test release
+
 ## 0.0.1
 
 ### Patch Changes
