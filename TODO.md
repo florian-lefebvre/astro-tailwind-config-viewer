@@ -7,8 +7,8 @@
   - [x] https://pnpm.io/fr/using-changesets#publishing
   - [x] https://github.com/changesets/action#with-publishing
 - [x] Release
-- [ ] Check TODOS
-  - [ ] addWatchFile
+- [x] Check TODOS
+  - [x] addWatchFile
 - [ ] Setup prettier
 - [ ] Setup eslint
 - [ ] GitHub metadata
