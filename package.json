@@ -8,7 +8,7 @@
   "scripts": {
     "playground:dev": "pnpm --filter playground dev",
     "changeset": "changeset",
-    "ci:publish": "pnpm publish -r --no-git-checks"
+    "ci:publish": "pnpm publish -r"
   },
   "author": "Florian Lefebvre",
   "devDependencies": {
