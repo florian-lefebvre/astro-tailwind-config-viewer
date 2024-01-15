@@ -42,15 +42,9 @@ const main = async () => {
   await run("pnpm changeset publish");
   await run("git push --follow-tags");
   const tag = (await run("git describe --abbrev=0")).replace("\n", "");
-  await run("gh", [
-    "release",
-    "create",
-    tag,
-    "--title",
-    tag,
-    "--notes",
-    "Please refer to [CHANGELOG.md](https://github.com/florian-lefebvre/astro-tailwind-config-viewer/blob/main/package/CHANGELOG.md) for details.",
-  ]);
+  await run(
+    `gh release create ${tag} --title ${tag} --notes "Please refer to [CHANGELOG.md](https://github.com/florian-lefebvre/astro-tailwind-config-viewer/blob/main/package/CHANGELOG.md) for details."`
+  );
 };
 
 main();
