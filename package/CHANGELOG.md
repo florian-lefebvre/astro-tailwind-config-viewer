@@ -1,5 +1,11 @@
 # astro-tailwind-config-viewer
 
+## 1.0.0
+
+### Major Changes
+
+- c2f6377: Releases the first version of the integration
+
 ## 0.0.4
 
 ### Patch Changes
