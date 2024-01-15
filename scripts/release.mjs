@@ -9,9 +9,9 @@ import { fileURLToPath } from "node:url";
  *
  * @returns {Promise<void>}
  */
-const runCommand = async (command, ...args) => {
+const run = async (command, ...args) => {
   const cwd = dirname(fileURLToPath(import.meta.url));
-  console.log(cwd)
+  console.log(cwd);
   return new Promise((resolve) => {
     spawn(command, args, {
       stdio: "inherit",
@@ -22,11 +22,11 @@ const runCommand = async (command, ...args) => {
 };
 
 const main = async () => {
-  await asyncExec("pnpm changeset version")
-  await asyncExec("git add .")
-  await asyncExec('git commit -m "chore: update version"')
-  await asyncExec("git push")
-  await asyncExec("pnpm changeset publish")
+  await run("pnpm changeset version");
+  await run("git add .");
+  await run('git commit -m "chore: update version"');
+  await run("git push");
+  await run("pnpm changeset publish");
 };
 
 main();
