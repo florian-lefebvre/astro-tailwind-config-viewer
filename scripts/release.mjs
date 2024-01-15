@@ -1,6 +1,5 @@
 import { spawn } from "node:child_process";
-import { dirname } from "node:path";
-import { fileURLToPath } from "node:url";
+import { resolve } from "node:path";
 
 /**
  *
@@ -10,8 +9,7 @@ import { fileURLToPath } from "node:url";
  * @returns {Promise<void>}
  */
 const run = async (command, ...args) => {
-  const cwd = dirname(fileURLToPath(import.meta.url));
-  console.log(cwd);
+  const cwd = resolve();
   return new Promise((resolve) => {
     spawn(command, args, {
       stdio: "inherit",
