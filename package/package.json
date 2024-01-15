@@ -1,7 +1,7 @@
 {
   "name": "astro-tailwind-config-viewer",
   "version": "0.0.0",
-  "description": "TODO:",
+  "description": "Explore your Tailwind config visually directly in your browser while developing.",
   "author": {
     "email": "contact@florian-lefebvre.dev",
     "name": "Florian Lefebvre",
@@ -9,9 +9,17 @@
   },
   "license": "MIT",
   "keywords": [
-    "astro-integration"
+    "astro-integration",
+    "astro-component",
+    "withastro",
+    "astro",
+    "devtools"
   ],
   "homepage": "https://github.com/florian-lefebvre/astro-tailwind-config-viewer",
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
   "exports": {
     ".": "./src/index.ts"
   },
