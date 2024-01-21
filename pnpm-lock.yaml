@@ -20,9 +20,15 @@ importers:
       '@astrojs/tailwind':
         specifier: '*'
         version: 5.1.0(astro@4.1.2)(tailwindcss@3.4.1)
+      add:
+        specifier: ^2.0.6
+        version: 2.0.6
       astro:
         specifier: ^4.1.2
         version: 4.1.2(@types/node@20.11.0)
+      astro-integration-kit:
+        specifier: ^0.0.2
+        version: 0.0.2(astro@4.1.2)
       serve-static:
         specifier: ^1.15.0
         version: 1.15.0
@@ -1146,6 +1152,10 @@ packages:
     hasBin: true
     dev: false
 
+  /add@2.0.6:
+    resolution: {integrity: sha512-j5QzrmsokwWWp6kUcJQySpbG+xfOBqqKnup3OIk1pz+kB/80SLorZ9V8zHFLO92Lcd+hbvq8bT+zOGoPkmBV0Q==}
+    dev: false
+
   /ansi-align@3.0.1:
     resolution: {integrity: sha512-IOfwwBF5iczOjp/WeY4YxyjqAFMQoZufdQWDd19SEExbVLNXqvpzSJ/M7Za4/sCPmQ0+GRquoA7bGcINcxew6w==}
     dependencies:
@@ -1257,6 +1267,14 @@ packages:
     resolution: {integrity: sha512-3CYzex9M9FGQjCGMGyi6/31c8GJbgb0qGyrx5HWxPd0aCwh4cB2YjMb2Xf9UuoogrMrlO9cTqnB5rI5GHZTcUA==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /astro-integration-kit@0.0.2(astro@4.1.2):
+    resolution: {integrity: sha512-QZReb4Y4svJ9kPEi/+fnSM6teFHt22omBafeXkVPKnQRjTuN+cSxLAU3RMrLcdmaLMyTXnGieu5XCPKbEUTiyg==}
+    peerDependencies:
+      astro: ^4.0.0
+    dependencies:
+      astro: 4.1.2(@types/node@20.11.0)
+    dev: false
 
   /astro@4.1.2(@types/node@20.11.0):
     resolution: {integrity: sha512-C/CrsIjRnRZYsLIBquAoTKj3ZPyGPVRByEcPMs6CrJLiHmcYnjpRMVd7oBFepU6772U1ZcXLy0zdxoRYjHFf5w==}

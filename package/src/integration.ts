@@ -1,7 +1,8 @@
 import type { AstroConfig, AstroIntegration } from "astro";
+import { createResolver, watchIntegration } from "astro-integration-kit";
 import { joinURL } from "ufo";
 import type { Options } from "./types";
-import { createHMRHandlers, createResolver, formatAddress } from "./utils";
+import { formatAddress } from "./utils";
 import { setupViewer } from "./viewer";
 import { virtualImportsPlugin } from "./virtual-imports";
 
@@ -16,18 +17,23 @@ export const astroTailwindConfigViewer = ({
 	let viewerPrefix: string;
 
 	const { resolve } = createResolver(import.meta.url);
-	const hmrHandlers = createHMRHandlers({ dir: resolve() });
 
 	return {
 		name: "astro-tailwind-config-viewer",
 		hooks: {
 			"astro:config:setup": async ({
+				addWatchFile,
 				config: _config,
 				addDevToolbarApp,
 				updateConfig,
 				command,
 			}) => {
-				await hmrHandlers["astro:config:setup"]({ command, updateConfig });
+				await watchIntegration({
+					addWatchFile,
+					command,
+					dir: resolve(),
+					updateConfig,
+				});
 				config = _config;
 
 				viewerPrefix = joinURL(config.base, options.endpoint);
@@ -46,8 +52,6 @@ export const astroTailwindConfigViewer = ({
 				});
 			},
 			"astro:server:setup": async ({ server }) => {
-				await hmrHandlers["astro:server:setup"]({ server });
-
 				await setupViewer({
 					server,
 					root: config.root,
