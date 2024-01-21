@@ -1,6 +1,6 @@
 {
   "name": "astro-tailwind-config-viewer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Explore your Tailwind config visually directly in your browser while developing.",
   "author": {
     "email": "contact@florian-lefebvre.dev",

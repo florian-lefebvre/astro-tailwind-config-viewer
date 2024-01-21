@@ -1,5 +1,11 @@
 # astro-tailwind-config-viewer
 
+## 1.0.1
+
+### Patch Changes
+
+- 4790f10: Adds HMR support
+
 ## 1.0.0
 
 ### Major Changes
