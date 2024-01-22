@@ -1,12 +1,12 @@
 import type { AstroConfig, AstroIntegration } from "astro";
 import { createResolver, watchIntegration } from "astro-integration-kit";
 import { joinURL } from "ufo";
-import type { Options } from "./types";
-import { formatAddress } from "./utils";
-import { setupViewer } from "./viewer";
-import { virtualImportsPlugin } from "./virtual-imports";
+import type { Options } from "./types.js";
+import { formatAddress } from "./utils.js";
+import { setupViewer } from "./viewer.js";
+import { virtualImportsPlugin } from "./virtual-imports.js";
 
-export const astroTailwindConfigViewer = ({
+export const integration = ({
 	configFile = "tailwind.config.mjs",
 	endpoint = "/_tailwind",
 	overlayMode = "redirect",
