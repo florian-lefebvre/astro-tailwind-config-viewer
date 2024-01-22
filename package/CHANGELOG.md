@@ -1,5 +1,11 @@
 # astro-tailwind-config-viewer
 
+## 1.0.2
+
+### Patch Changes
+
+- 88a87bb: Improves imports
+
 ## 1.0.1
 
 ### Patch Changes
