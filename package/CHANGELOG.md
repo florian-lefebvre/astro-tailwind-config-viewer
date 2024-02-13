@@ -1,5 +1,11 @@
 # astro-tailwind-config-viewer
 
+## 1.0.3
+
+### Patch Changes
+
+- dc7bd96: Fixes README
+
 ## 1.0.2
 
 ### Patch Changes
