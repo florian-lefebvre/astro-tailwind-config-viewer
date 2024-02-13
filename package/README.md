@@ -21,15 +21,15 @@ This integration only works with Astro 4 and above, and requires at least `tailw
 Install the integration **automatically** using the Astro CLI:
 
 ```bash
-pnpm astro add astro-dev-plugin-reboot
+pnpm astro add astro-tailwind-config-viewer
 ```
 
 ```bash
-npm astro add astro-dev-plugin-reboot
+npx astro add astro-tailwind-config-viewer
 ```
 
 ```bash
-yarn astro add astro-dev-plugin-reboot
+yarn astro add astro-tailwind-config-viewer
 ```
 
 Or install it **manually**:
@@ -37,26 +37,26 @@ Or install it **manually**:
 1. Install the required dependencies
 
 ```bash
-pnpm add @astrojs/tailwind tailwindcss@^3.0.0
+pnpm add astro-tailwind-config-viewer
 ```
 
 ```bash
-npm install @astrojs/tailwind tailwindcss@^3.0.0
+npm install astro-tailwind-config-viewer
 ```
 
 ```bash
-yarn add @astrojs/tailwind tailwindcss@^3.0.0
+yarn add astro-tailwind-config-viewer
 ```
 
 2. Add the integration to your astro config
 
 ```diff
-+import astroTailwindConfigViewer from "astro-tailwind-config-viewer";
++import tailwindConfigViewer from "astro-tailwind-config-viewer";
 
 export default defineConfig({
   integrations: [
     tailwind(),
-+    astroTailwindConfigViewer(),
++    tailwindConfigViewer(),
   ],
 });
 ```
