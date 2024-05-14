@@ -1,5 +1,5 @@
-import type { DevToolbarApp } from "astro";
 import { overlayMode, viewerLink } from "virtual:@astrojs/tailwind/dev-overlay";
+import type { DevToolbarApp } from "astro";
 
 export default {
 	id: "tailwind",

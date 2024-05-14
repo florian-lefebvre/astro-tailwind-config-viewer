@@ -46,7 +46,7 @@
 	"devDependencies": {
 		"@types/node": "^20.12.12",
 		"@types/serve-static": "^1.15.7",
-    "tsup": "^8.0.2",
+		"tsup": "^8.0.2",
 		"vite": "^5.2.11"
 	}
 }
