@@ -1,5 +1,11 @@
 # astro-tailwind-config-viewer
 
+## 2.0.0
+
+### Major Changes
+
+- 73732a2: Updates the integration internals to make it work with latest versions of Astro. It now requires Astro `>=4.7.0`
+
 ## 1.0.3
 
 ### Patch Changes
