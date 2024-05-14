@@ -6,11 +6,11 @@ This is an [Astro integration](https://docs.astro.build/en/guides/integrations-g
 
 ### Prerequisites
 
-Although `@astrojs/tailwind` is not technically required, I don't see why you'd use this integration with it. Make sure that `astroTailwindConfigViewer` is called after `@astrojs/tailwind`:
+Although `@astrojs/tailwind` is not technically required, I don't see why you'd use this integration with it. Make sure that `tailwindConfigViewer` is called after `@astrojs/tailwind`:
 
 ```ts
 export default defineConfig({
-  integrations: [tailwind(), astroTailwindConfigViewer()],
+  integrations: [tailwind(), tailwindConfigViewer()],
 });
 ```
 
@@ -66,7 +66,7 @@ export default defineConfig({
 Here is the TypeScript type:
 
 ```ts
-export type Options = {
+type Options = {
   configFile: string;
   endpoint: string;
   overlayMode: "embed" | "redirect";
@@ -75,15 +75,31 @@ export type Options = {
 
 #### `configFile`
 
-**This option is really important.** The value needs to be the same as `@astrojs/tailwind` [`configFile option`](https://docs.astro.build/en/guides/integrations-guide/tailwind/#configfile).
+**This option is really important.** The value needs to be the same as `@astrojs/tailwind` [`configFile option`](https://docs.astro.build/en/guides/integrations-guide/tailwind/#configfile). Defaults to `"tailwind.config.mjs"`.
 
-> **Why do I need to duplicate this option?**
->
-> This is a current limitation of Astro. An integration cannot access options or data from another integration. However, there is a proposal for it on the Astro roadmap: upvote it! [Link to proposal](https://github.com/withastro/roadmap/discussions/814)
+```js
+const configFile = "custom-tailwind.mjs"
+
+export default defineConfig({
+  integrations: [
+    tailwind({ configFile }),
+    tailwindConfigViewer({ configFile }),
+  ],
+});
+```
 
 #### `endpoint`
 
 By default, the config viewer is injected at `/_tailwind`. Setting this option will allow you to change it.
+
+```js
+export default defineConfig({
+  integrations: [
+    tailwind(),
+    tailwindConfigViewer({ endpoint: "/foo" }),
+  ],
+});
+```
 
 #### `overlayMode`
 
@@ -91,6 +107,15 @@ The Dev Toolbar App has 2 modes:
 
 1. `redirect` (default): clicking on the app icon will open the viewer in a new tab
 2. `embed`: clicking the app icon will show a panel with an embedded viewer. Note that the viewer is still accessible at the `endpoint`.
+
+```js
+export default defineConfig({
+  integrations: [
+    tailwind(),
+    tailwindConfigViewer({ overlayMode: "/embed" }),
+  ],
+});
+```
 
 ## Contributing
 
@@ -105,10 +130,10 @@ Install dependencies using pnpm:
 pnpm i --frozen-lockfile
 ```
 
-Start the playground:
+Start the playground and package watcher:
 
 ```bash
-pnpm playground:dev
+pnpm dev
 ```
 
 You can now edit files in `package`. Please note that making changes to those files may require restarting the playground dev server.
