@@ -26,7 +26,7 @@
 			"default": "./dist/index.js"
 		}
 	},
-	"files": ["dist"],
+	"files": ["dist", "assets"],
 	"scripts": {
 		"dev": "tsup --watch",
 		"build": "tsup"
@@ -34,7 +34,7 @@
 	"type": "module",
 	"peerDependencies": {
 		"@astrojs/tailwind": "*",
-		"astro": "^4.0.0",
+		"astro": "^4.7.0",
 		"tailwindcss": "^3.0.0"
 	},
 	"dependencies": {

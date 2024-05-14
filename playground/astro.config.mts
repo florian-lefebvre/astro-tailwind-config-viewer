@@ -4,18 +4,18 @@ import { hmrIntegration } from "astro-integration-kit/dev";
 import { defineConfig } from "astro/config";
 
 const { default: tailwindConfigViewer } = await import(
-	"astro-tailwind-config-viewer"
+  "astro-tailwind-config-viewer"
 );
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [
-		tailwind(),
-		tailwindConfigViewer({
-			viewer: true,
-		}),
-		hmrIntegration({
-			directory: createResolver(import.meta.url).resolve("../package/dist"),
-		}),
-	],
+  integrations: [
+    tailwind(),
+    tailwindConfigViewer({
+      overlayMode: "redirect",
+    }),
+    hmrIntegration({
+      directory: createResolver(import.meta.url).resolve("../package/dist"),
+    }),
+  ],
 });
