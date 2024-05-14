@@ -12,7 +12,7 @@ export default defineConfig({
 	integrations: [
 		tailwind(),
 		tailwindConfigViewer({
-			overlayMode: "redirect",
+			overlayMode: "embed",
 		}),
 		hmrIntegration({
 			directory: createResolver(import.meta.url).resolve("../package/dist"),
