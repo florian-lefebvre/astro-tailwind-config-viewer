@@ -97,7 +97,7 @@ export const integration = defineIntegration({
 					);
 					params.server.middlewares.use(
 						viewerPrefix,
-						serveStatic(resolve("../node_modules/tailwind-config-viewer/dist")),
+						serveStatic(resolve("../dist/static-assets/")),
 					);
 				},
 				"astro:server:start": ({ address, logger }) => {
