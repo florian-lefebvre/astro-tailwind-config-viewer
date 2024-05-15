@@ -1,5 +1,11 @@
 # astro-tailwind-config-viewer
 
+## 2.0.1
+
+### Patch Changes
+
+- 41d878b: Fixes an issue that caused the injected route to return 404 because of wrong paths
+
 ## 2.0.0
 
 ### Major Changes
