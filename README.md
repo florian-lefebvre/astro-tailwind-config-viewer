@@ -2,6 +2,8 @@
 
 `astro-tailwind-config-viewer` is an integration that adds [`tailwind-config-viewer`](https://github.com/rogden/tailwind-config-viewer) during development.
 
+> requires a minimum Astro version of 4.7
+
 To see how to get started, check out the [package README](./package/README.md)
 
 ![Screenshot of the tailwind config viewer dev toolbar app in dev mode](./.github/assets/embed.png)
