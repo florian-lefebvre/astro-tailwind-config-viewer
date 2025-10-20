@@ -1,5 +1,11 @@
 # astro-tailwind-config-viewer
 
+## 2.0.2
+
+### Patch Changes
+
+- [#8](https://github.com/florian-lefebvre/astro-tailwind-config-viewer/pull/8) [`7c4d122`](https://github.com/florian-lefebvre/astro-tailwind-config-viewer/commit/7c4d122ac912cdd7139ba6797cef850d9b30ad63) Thanks [@florian-lefebvre](https://github.com/florian-lefebvre)! - Bumps version, no code change
+
 ## 2.0.1
 
 ### Patch Changes
