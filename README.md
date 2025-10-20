@@ -4,7 +4,7 @@
 
 > requires a minimum Astro version of 4.7
 
-To see how to get started, check out the [package README](./package/README.md)
+To see how to get started, check out the [package README](./packages/astro-tailwind-config-viewer/README.md)
 
 ![Screenshot of the tailwind config viewer dev toolbar app in dev mode](./.github/assets/embed.png)
 
