@@ -1,12 +1,12 @@
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import type { AstroConfig, HookParameters } from "astro";
+import { z } from "astro/zod";
 import {
 	addVirtualImports,
 	createResolver,
 	defineIntegration,
 } from "astro-integration-kit";
-import { z } from "astro/zod";
 import serveStatic from "serve-static";
 import loadConfig from "tailwindcss/loadConfig.js";
 import { joinURL } from "ufo";
@@ -80,8 +80,9 @@ export const integration = defineIntegration({
 				},
 				"astro:server:setup": async (params) => {
 					const resolveConfig = (await import(
-						// @ts-ignore
+						// @ts-expect-error
 						"tailwind-config-viewer/lib/tailwindConfigUtils.js"
+						// biome-ignore lint/suspicious/noExplicitAny: type doesn't matter
 					).then((r) => r.resolveConfig)) as (config: any) => any;
 
 					const tailwindConfig = loadConfig(

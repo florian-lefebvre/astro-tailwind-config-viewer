@@ -9,13 +9,15 @@ const { default: tailwindConfigViewer } = await import(
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [
-		tailwind(),
-		tailwindConfigViewer({
-			overlayMode: "embed",
-		}),
-		hmrIntegration({
-			directory: createResolver(import.meta.url).resolve("../package/dist"),
-		}),
-	],
+  integrations: [
+    tailwind(),
+    tailwindConfigViewer({
+      overlayMode: "embed",
+    }),
+    hmrIntegration({
+      directory: createResolver(import.meta.url).resolve(
+        "../packages/astro-tailwind-config-viewer/dist"
+      ),
+    }),
+  ],
 });
