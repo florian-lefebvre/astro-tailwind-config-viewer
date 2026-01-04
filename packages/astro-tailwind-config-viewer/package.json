@@ -41,13 +41,13 @@
 	},
 	"dependencies": {
 		"astro-integration-kit": "^0.19.1",
-		"serve-static": "^1.16.3",
+		"serve-static": "^2.2.1",
 		"tailwind-config-viewer": "^2.0.4",
 		"ufo": "^1.6.1"
 	},
 	"devDependencies": {
 		"@types/node": "^20.19.27",
-		"@types/serve-static": "^1.15.10",
+		"@types/serve-static": "^2.2.0",
 		"tsup": "^8.5.1",
 		"vite": "^5.4.21"
 	}
