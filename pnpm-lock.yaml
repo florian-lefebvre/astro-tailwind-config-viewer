@@ -59,7 +59,7 @@ importers:
     dependencies:
       '@astrojs/tailwind':
         specifier: ^6.0.2
-        version: 6.0.2(astro@5.16.6(@types/node@20.19.27)(jiti@1.21.7)(rollup@4.53.1)(typescript@5.9.3)(yaml@2.8.1))(tailwindcss@3.4.19(yaml@2.8.1))
+        version: 6.0.2(astro@5.16.6(@types/node@20.19.27)(jiti@1.21.7)(rollup@4.53.1)(typescript@5.9.3)(yaml@2.8.1))(tailwindcss@4.1.18)
       astro:
         specifier: ^5.16.6
         version: 5.16.6(@types/node@20.19.27)(jiti@1.21.7)(rollup@4.53.1)(typescript@5.9.3)(yaml@2.8.1)
@@ -70,8 +70,8 @@ importers:
         specifier: workspace:*
         version: link:../packages/astro-tailwind-config-viewer
       tailwindcss:
-        specifier: ^3.4.19
-        version: 3.4.19(yaml@2.8.1)
+        specifier: ^4.1.18
+        version: 4.1.18
     devDependencies:
       '@astrojs/check':
         specifier: ^0.9.6
@@ -3187,6 +3187,9 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
+  tailwindcss@4.1.18:
+    resolution: {integrity: sha512-4+Z+0yiYyEtUVCScyfHCxOYP06L5Ne+JiHhY2IjR2KWMIWhJOYZKLSGZaP5HkZ8+bY0cxfzwDE5uOmzFXyIwxw==}
+
   term-size@2.2.1:
     resolution: {integrity: sha512-wK0Ri4fOGjv/XPy8SBHZChl8CM7uMc5VML7SqiQ0zG7+J5Vr+RMQDoHa2CNT6KHUnTGIXH34UDMkPzAUyapBZg==}
     engines: {node: '>=8'}
@@ -3827,13 +3830,13 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  '@astrojs/tailwind@6.0.2(astro@5.16.6(@types/node@20.19.27)(jiti@1.21.7)(rollup@4.53.1)(typescript@5.9.3)(yaml@2.8.1))(tailwindcss@3.4.19(yaml@2.8.1))':
+  '@astrojs/tailwind@6.0.2(astro@5.16.6(@types/node@20.19.27)(jiti@1.21.7)(rollup@4.53.1)(typescript@5.9.3)(yaml@2.8.1))(tailwindcss@4.1.18)':
     dependencies:
       astro: 5.16.6(@types/node@20.19.27)(jiti@1.21.7)(rollup@4.53.1)(typescript@5.9.3)(yaml@2.8.1)
       autoprefixer: 10.4.21(postcss@8.5.6)
       postcss: 8.5.6
       postcss-load-config: 4.0.2(postcss@8.5.6)
-      tailwindcss: 3.4.19(yaml@2.8.1)
+      tailwindcss: 4.1.18
     transitivePeerDependencies:
       - ts-node
 
@@ -7283,6 +7286,8 @@ snapshots:
     transitivePeerDependencies:
       - tsx
       - yaml
+
+  tailwindcss@4.1.18: {}
 
   term-size@2.2.1: {}
 
