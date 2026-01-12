@@ -43,7 +43,7 @@
 		"astro-integration-kit": "^0.19.1",
 		"serve-static": "^2.2.1",
 		"tailwind-config-viewer": "^2.0.4",
-		"ufo": "^1.6.1"
+		"ufo": "^1.6.2"
 	},
 	"devDependencies": {
 		"@types/node": "^20.19.27",
