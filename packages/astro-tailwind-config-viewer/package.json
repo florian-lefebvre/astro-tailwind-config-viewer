@@ -46,7 +46,7 @@
 		"ufo": "^1.6.3"
 	},
 	"devDependencies": {
-		"@types/node": "^20.19.30",
+		"@types/node": "^20.19.32",
 		"@types/serve-static": "^2.2.0",
 		"tsup": "^8.5.1",
 		"vite": "^5.4.21"
